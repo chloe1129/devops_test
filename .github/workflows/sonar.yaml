@@ -37,7 +37,7 @@ jobs:
         working-directory: ./java-sca-test
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=chloe1129_devops_test
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=chloe1129_devops_test -Dsonar.sca.enabled=true
 
       # ----------------------------------------------------------------------
       # 2. Node.js SCA 분석 실행
@@ -55,5 +55,7 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v6
         with:
           projectBaseDir: ./nodejs-sca-test
+          args: >
+            -Dsonar.sca.enabled=true
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
