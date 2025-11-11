@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-sca-test",
+  "version": "1.0.0",
+  "description": "SonarQube SCA Node.js Test Project with known vulnerabilities.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "4.13.4", 
+    "body-parser": "^1.15.0"
+  },
+  "license": "ISC"
+}
